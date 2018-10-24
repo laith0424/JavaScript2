@@ -268,48 +268,21 @@ function createFieldsetOfBooksObject(){     //Create a fieldset of Books Object
 
     div.appendChild( ul );
 
-  
 
-    
-    var li1 = document.createElement( 'li' );   //Put every  detail of the book in "LI". here put the 'title' in "LI"
-  
-    li1.innerHTML = 'Title : ' + bookObject[ bookTitles [ i ] ].title;
-  
-    ul.append( li1 );
-  
-  
-  
-    var li2=document.createElement( 'li' );   //Put every  detail of the book in "LI". here put the 'language' in "LI"
-  
-    li2.innerHTML = 'Language : ' +  bookObject[ bookTitles [ i ] ].language;
-  
-    ul.append( li2 );
-  
-  
-  
-    var li3=document.createElement( 'li' );   //Put every  detail of the book in "LI". here put the 'author' in "LI"
-   
-    li3.innerHTML = 'Author : ' +  bookObject[ bookTitles [ i ] ] . author;
-  
-    ul.append( li3 );
-  
-  
-  
-    var li4 = document.createElement('li');   //Put every  detail of the book in "LI". here put the 'date_of_publication' in "LI"
-  
-    li4.innerHTML = 'Date Of Publication : ' +  bookObject[ bookTitles [ i ] ].date_of_publication;
+    for ( let property in bookObject[ bookTitles [ i ] ] ){
 
+      var li = document.createElement( 'li' );   //Put every  detail of the book in "LI".  - title , language , author , date_of_publication -
   
+      li.innerHTML = property + ' : ' + bookObject[ bookTitles [ i ] ].property;
+  
+      ul.append( li );
 
-    ul.append( li4 );
-
+    }
+  
     fieldset.appendChild( div );  
 
   }
 
-
-  
   document.body.append( fieldset );
-
 };
 
