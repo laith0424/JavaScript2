@@ -221,7 +221,7 @@ const bookObject = {          //An object of books
 //2.5   &   2.7   -----------------------------------------------------------
 
 
-function createFieldsetOfBooksObject(){     //Create a fieldset of Books Object
+function createFieldsetOfBooksObject() {     //Create a fieldset of Books Object
 
   'use strict'
 
@@ -232,7 +232,7 @@ function createFieldsetOfBooksObject(){     //Create a fieldset of Books Object
 
 
 
-  var legend=document.createElement( 'legend' );    //Create a legend for the  fieldset
+  var legend = document.createElement( 'legend' );    //Create a legend for the  fieldset
 
   legend.innerHTML = 'All book information';  
 
@@ -273,7 +273,7 @@ function createFieldsetOfBooksObject(){     //Create a fieldset of Books Object
 
       var li = document.createElement( 'li' );   //Put every  detail of the book in "LI".  - title , language , author , date_of_publication -
   
-      li.innerHTML = property + ' : ' + bookObject[ bookTitles [ i ] ].property;
+      li.innerHTML = property + ' : ' + bookObject[ bookTitles [ i ] ] [property] ;
   
       ul.append( li );
 
