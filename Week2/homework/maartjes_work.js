@@ -45,3 +45,27 @@ const tuesday = [
 const tasks = monday.concat(tuesday);
 
 // Add your code here
+const PER_HOUR_RATE = 35 ;   // 35 Euro
+
+let durationsInHoursOfMonday  = monday.map( function ( obj ) { return obj.duration / 60 })
+
+durationsInHoursOfMonday  = durationsInHoursOfMonday.filter( num => { return num >= 1 })
+
+let pricesdurationsOfMonday = durationsInHoursOfMonday.map( function ( num ) { return num * PER_HOUR_RATE })
+
+var totalSumInMonday = pricesdurationsOfMonday.reduce((a, b) => a + b, 0);
+
+
+
+let durationsInHoursOfTuesday = tuesday.map( function ( obj ) { return obj.duration / 60 })
+
+durationsInHoursOfTuesday = durationsInHoursOfTuesday.filter( num => { return num >= 1 })
+
+let pricesdurationsOfTuesday = durationsInHoursOfTuesday.map( function ( num ) { return num * PER_HOUR_RATE })
+
+var totalSumInTuesday = pricesdurationsOfTuesday.reduce((a, b) => a + b, 0);
+
+
+
+var totalSum = Math.floor( ( totalSumInTuesday + totalSumInMonday) * 100) / 100;
+console.log('Total Price : ' + totalSum + ' €');
