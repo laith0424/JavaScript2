@@ -1,11 +1,14 @@
 'use strict';
 
-function foo(func) {
-  // What to do here? 
+function doHomework ( subject , callback ) {
+
+  console.log ( `Starting my ${ subject } homework.` ) ;
+
+  setTimeout( function ( ) { callback ( ) ; } , 5000 ) ;
 }
 
-function bar() {
-  console.log('Hello, I am bar!');
-}
+function finishedHomework(){
 
-foo(bar);
+  console.log ( 'Finished my homework' ) ;
+}
+doHomework ( 'math' , finishedHomework ) ;
